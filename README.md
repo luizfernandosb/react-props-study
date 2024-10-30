@@ -14,7 +14,7 @@ Um projeto simples em React que demonstra como criar uma tabela filtrável de pr
 O projeto é composto por vários componentes que trabalham juntos para fornecer a funcionalidade desejada:
 
 ### 1. `App`
-O componente principal que renderiza o componente `FilterableProductTable`.
+O componente principal que renderiza o componente `FilterableProductTable`
 
 ```javascript
 import FilterableProductTable from "./components/FilterableProductTable";
@@ -27,12 +27,13 @@ function App() {
   );
 }
 
-export default App;
-2. FilterableProductTable
+export default App; 
+```
+
+### 2. `FilterableProductTable`
 Gerencia o estado dos produtos e a lógica de filtragem. Este componente contém o SearchBar e o ProductTable.
 
-javascript
-Copiar código
+```javascript
 import { useState } from "react";
 import ProductTable from "./ProductTable";
 import SearchBar from "./SearchBar";
@@ -61,11 +62,12 @@ export default function FilterableProductTable() {
     </div>
   );
 }
-3. SearchBar
+```
+
+### 3. `SearchBar`
 Permite que o usuário busque produtos por nome e aplique um filtro para mostrar apenas os produtos em estoque.
 
-javascript
-Copiar código
+```javascript
 export default function SearchBar({ checked, onChange, value, onInputChange }) {
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginBottom: "16px" }}>
@@ -96,11 +98,12 @@ export default function SearchBar({ checked, onChange, value, onInputChange }) {
     </div>
   );
 }
-4. ProductTable
+```
+
+### 4. `ProductTable`
 Exibe a tabela de produtos com base nos critérios de busca e filtro. Agrupa produtos por categoria (frutas e vegetais) e mostra o nome e preço.
 
-javascript
-Copiar código
+```javascript
 import ProductCategoryRow from "./ProductCategoryRow";
 import ProductRow from "./ProductRow";
 import data from "../api/data.js";
@@ -110,11 +113,12 @@ export default function ProductTable({ checked, value }) {
   const isVegetable = data.filter((item) => item.category === "Vegetables");
   // Lógica de filtragem...
 }
-5. ProductRow e ProductCategoryRow
+```
+
+### 5. `ProductRow` e `ProductCategoryRow`
 Responsáveis por renderizar as linhas da tabela de produtos e as categorias, respectivamente.
 
-javascript
-Copiar código
+```javascript
 export default function ProductCategoryRow({ value }) {
   return (
     <thead>
@@ -126,22 +130,29 @@ export default function ProductCategoryRow({ value }) {
     </thead>
   );
 }
-Como Executar o Projeto
+```
+
+### Como Executar o Projeto
 Clone o repositório:
 
+```javascript
 bash
-Copiar código
 git clone https://github.com/seuusuario/seurepositorio.git
 cd seurepositorio
-Instale as dependências:
+```
 
+### Instale as dependências:
+
+```javascript
 bash
-Copiar código
 npm install
-Execute o projeto:
 
+```
+### Execute o projeto:
+```javascript
 bash
-Copiar código
 npm start
+```
+
 Contribuições
 Sinta-se à vontade para contribuir com o projeto. Abra um pull request ou um issue para discutir melhorias ou novas funcionalidades.
